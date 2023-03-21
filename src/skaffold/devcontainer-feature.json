@@ -1,0 +1,21 @@
+{
+    "id": "skaffold",
+    "version": "0.9.0",
+    "name": "Skaffold Installer",
+    "description": "Installs Google's skaffold - https://skaffold.dev/",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "bleeding",
+                "v2.1.0"
+            ],
+            "default": "latest",
+            "description": "Select a version of skaffold to install, `latest`, or `bleeding` for latest commit. Find release numbers at https://github.com/GoogleContainerTools/skaffold/releases"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+  }

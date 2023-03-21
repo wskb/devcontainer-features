@@ -1,0 +1,27 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils": {},
+            "skaffold": {}
+        }
+    },
+    "specific": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils": {},
+            "skaffold": {
+                "version": "v2.1.0"
+            }
+        }
+    },
+    "bleeding": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils": {},
+            "skaffold": {
+                "version": "bleeding"
+            }
+        }
+    }
+}

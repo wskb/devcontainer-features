@@ -1,0 +1,9 @@
+{
+    "id": "host-docker",
+    "version": "0.9.0",
+    "name": "Host machine Docker socket",
+    "description": "Mounts the Docker socket from the host machine so that it can be accessed by a dev container.",
+    "mounts": [
+        { "source": "/var/run/docker.sock", "target": "/var/run/docker-host.sock", "type": "bind" }
+    ]
+}

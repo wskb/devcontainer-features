@@ -1,0 +1,26 @@
+{
+    "id": "host-k8s",
+    "version": "0.9.0",
+    "name": "Host machine Kubernetes configuration",
+    "description": "Makes the kubernetes configuration in the host available to the dev container. Rewrites the configuration to replace references to localhost.",
+    "mounts": [
+        { "source": "${env:HOME}${env:USERPROFILE}/.kube", "target": "/usr/local/share/kube-localhost", "type": "bind" }
+    ],
+    "options": {
+        "localk8shost": {
+            "type": "string",
+            "description": "Host by which kubernetes clients can connect with the cluster (replaces localhost)",
+            "proposals": ["host.docker.internal", "lima-rancher-desktop"],
+            "default": "host.docker.internal"
+        },
+        "localk8sipfromhost": {
+            "type": "string",
+            "description": "Host to resolve to an ip address with which kubernetes clients can connect with the cluster (replaces localhost). localk8shost must be set to an empty string",
+            "default": ""
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/wskb/devcontainer-features/host-minikube-certs",
+        "ghcr.io/wskb/devcontainer-features/host-docker"
+    ]
+}

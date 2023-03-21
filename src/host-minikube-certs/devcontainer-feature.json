@@ -1,0 +1,9 @@
+{
+    "id": "host-minikube-certs",
+    "version": "0.9.0",
+    "name": "Minikube certificates from the host machine",
+    "description": "Mounts the minikube certificates from the host machine so that it can be accessed by the host-k8s feature in a dev container.",
+    "mounts": [
+        { "source": "${env:HOME}${env:USERPROFILE}/.minikube", "target": "/usr/local/share/minikube-localhost", "type": "bind" }
+    ]
+}
